@@ -16,6 +16,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import { AlertModal } from "./modals/AlertModal";
+import { ApiAlert } from "./ui/ApiAlert";
+import { useOrigin } from "@/hooks/useOrigin";
 
 
 interface SettingsFormProps {
@@ -34,6 +36,8 @@ export function SettingsForm({ initialData }: SettingsFormProps) {
     const [isLoading, setIsLoading] = useState(false);
 
     const router = useRouter();
+
+    const origin = useOrigin();
     
     const form = useForm<SettingsFormValues>({
         resolver: zodResolver(formSchema),
@@ -137,6 +141,11 @@ export function SettingsForm({ initialData }: SettingsFormProps) {
 
         </form>
       </Form>
+      <Separator />
+      <ApiAlert
+       title="NEXT_PUBLIC_API_URL"
+      description={`${origin}/api/stores/${initialData.id}`}
+      variant="public" />
     </>
   );
 }

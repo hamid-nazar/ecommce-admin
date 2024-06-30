@@ -9,7 +9,7 @@ export async function POST(request: Request) {
         const prisma = prismadb;
 
         if (!userId) {
-            return new NextResponse("Unauthorized", { status: 401 });
+            return new NextResponse("Unathenticated", { status: 401 });
         }
 
         if (!name) {
@@ -19,8 +19,8 @@ export async function POST(request: Request) {
 
         const store = await prisma.store.create({
             data: {
-                name,
-                userId
+                name: name,
+                userId: userId
             }
         });
 
@@ -32,3 +32,7 @@ export async function POST(request: Request) {
         return new NextResponse("Internal Error", { status: 500 });
     }
 }
+
+
+
+  
