@@ -3,7 +3,7 @@ import { auth } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 
 
-import { SettingsForm } from '@/components/SettingsForm';
+import { SettingsForm } from '@/features/setting/SettingsForm';
 import prismadb from '@/lib/prismadb';
 
 export default async function SettingsPage({params}: {params: {storeId: string}}) {

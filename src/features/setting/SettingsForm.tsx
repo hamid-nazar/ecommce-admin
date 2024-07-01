@@ -15,8 +15,8 @@ import { Separator } from "@/components/ui/separator";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
-import { AlertModal } from "./modals/AlertModal";
-import { ApiAlert } from "./ui/ApiAlert";
+import { AlertModal } from "@/components/modals/AlertModal";
+import { ApiAlert } from "@/components/ui/ApiAlert";
 import { useOrigin } from "@/hooks/useOrigin";
 
 

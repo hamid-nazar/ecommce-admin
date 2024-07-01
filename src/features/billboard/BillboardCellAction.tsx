@@ -8,19 +8,19 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { BillboardColumn } from "@/components/Columns";
-import { Button } from "./ui/button";
+import { BillboardColumnType } from "@/features/billboard/BillboardColumn";
+import { Button } from "@/components/ui/button";
 import { Copy, Edit, MoreHorizontal, Trash } from "lucide-react";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useParams, useRouter } from "next/navigation";
-import { AlertModal } from "./modals/AlertModal";
+import { AlertModal } from "@/components/modals/AlertModal";
 
 interface CellActionProps {
-  data: BillboardColumn;
+  data: BillboardColumnType;
 }
 
-export function CellAction({ data }: CellActionProps) {
+export function BillboardCellAction({ data }: CellActionProps) {
   const router = useRouter();
   const params = useParams();
 

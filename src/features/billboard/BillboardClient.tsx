@@ -5,13 +5,13 @@ import { Plus } from 'lucide-react'
 import { Heading } from '@/components/ui/Heading'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { BillboardColumn, columns } from '@/components/Columns';
+import { BillboardColumnType, billboardcolumns } from '@/features/billboard/BillboardColumn';
 import { DataTable } from '@/components/ui/DataTable';
-import { ApiList } from './ui/ApiList';
+import { ApiList } from '../../components/ui/ApiList';
 
 
 interface BillboardClientProps{
-  data: BillboardColumn[]
+  data: BillboardColumnType[]
 }
 
 export function BillboardClient({data}: BillboardClientProps) {
@@ -31,7 +31,7 @@ export function BillboardClient({data}: BillboardClientProps) {
          </Button>
     </div>
     <Separator/>
-    <DataTable data={data} columns={columns} searchKey='label' />
+    <DataTable data={data} columns={billboardcolumns} searchKey='label' />
     <Heading title="API" description="API calls for Billboards"/>
     <ApiList entityName="billboards" entityIdName="billboardId" />
     </>

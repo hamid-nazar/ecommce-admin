@@ -1,4 +1,4 @@
-import { Navbar } from '@/components/Navbar';
+import { Navbar } from '@/features/navigation/Navbar';
 import prismadb from '@/lib/prismadb';
 import { auth } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';

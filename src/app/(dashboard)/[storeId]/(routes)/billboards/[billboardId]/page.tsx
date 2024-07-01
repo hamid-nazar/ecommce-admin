@@ -1,4 +1,4 @@
-import { BillboardForm } from '@/components/BillboardForm';
+import { BillboardForm } from '@/features/billboard/BillboardForm';
 import prismadb from '@/lib/prismadb'
 import React from 'react'
 

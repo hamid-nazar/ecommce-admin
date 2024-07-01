@@ -1,17 +1,17 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table"
-import { CellAction } from "./CellAction"
+import { BillboardCellAction } from "@/features/billboard/BillboardCellAction";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type BillboardColumn = {
+export type BillboardColumnType = {
   id: string
   label: string
    createdAt: string
 }
 
-export const columns: ColumnDef<BillboardColumn>[] = [
+export const billboardcolumns: ColumnDef<BillboardColumnType>[] = [
   {
     accessorKey: "label",
     header: "Label",
@@ -22,6 +22,6 @@ export const columns: ColumnDef<BillboardColumn>[] = [
   },
   {
     id: "actions",
-    cell: ({ row }) => <CellAction data={row.original} />,
+    cell: ({ row }) => <BillboardCellAction data={row.original} />,
   },
 ]
