@@ -13,7 +13,7 @@ interface ImageUploadProps {
 }
 
 export function ImageUpload({disabled,values,onChange,onRemove,}: ImageUploadProps) {
-
+  
   const [mounted, setMounted] = useState(false);
 
   useEffect(function () {
@@ -21,6 +21,7 @@ export function ImageUpload({disabled,values,onChange,onRemove,}: ImageUploadPro
   }, []);
 
   function onUpload(result: any) {
+    console.log(result);
     onChange(result.info.secure_url);
   }
 

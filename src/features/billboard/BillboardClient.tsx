@@ -33,6 +33,7 @@ export function BillboardClient({data}: BillboardClientProps) {
     <Separator/>
     <DataTable data={data} columns={billboardcolumns} searchKey='label' />
     <Heading title="API" description="API calls for Billboards"/>
+    <Separator/>
     <ApiList entityName="billboards" entityIdName="billboardId" />
     </>
   )
