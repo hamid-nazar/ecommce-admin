@@ -58,9 +58,9 @@ export async function GET(request: Request,params: {storeId: string}) {
 
         const { userId } = auth();
 
-        if (!userId) {
-            return new NextResponse("Unathenticated", { status: 401 });
-        }   
+        // if (!userId) {
+        //     return new NextResponse("Unathenticated", { status: 401 });
+        // }   
 
      
 

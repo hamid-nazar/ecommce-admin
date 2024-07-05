@@ -26,7 +26,7 @@ interface SizeFormProps {
 
 const formSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
-  value: z.string().min(4).regex(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/, { message: "String must a valid hex code" }),
+  value: z.string().min(1, { message: "Value is required" }),
 });
 
 type SizeFormValues = z.infer<typeof formSchema>;

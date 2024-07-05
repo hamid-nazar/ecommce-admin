@@ -144,7 +144,7 @@ export function SettingsForm({ initialData }: SettingsFormProps) {
       <Separator />
       <ApiAlert
        title="NEXT_PUBLIC_API_URL"
-      description={`${origin}/api/stores/${initialData.id}`}
+      description={`${origin}/api/${initialData.id}`}
       variant="public" />
     </>
   );

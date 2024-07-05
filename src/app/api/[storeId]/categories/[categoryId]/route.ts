@@ -8,12 +8,15 @@ export async function GET(request: Request, { params }: { params: { categoryId: 
     try {
 
         if(!params.categoryId) {
-            return new NextResponse("Billboard ID is required", { status: 400 });
+            return new NextResponse("Category ID is required", { status: 400 });
         }
 
-        const category = await prismadb.billboard.findUnique({
+        const category = await prismadb.category.findUnique({
             where: {
                 id: params.categoryId
+            },
+            include: {
+                billboard: true
             }
         });
 
@@ -36,7 +39,7 @@ export async function PATCH(request: Request, { params }: { params: { categoryId
         }
 
        if(!params.categoryId) {
-            return new NextResponse("Billboard ID is required", { status: 400 });
+            return new NextResponse("Category ID is required", { status: 400 });
         }
 
         if (!name) {
@@ -86,7 +89,7 @@ export async function DELETE(request: Request, { params }: { params: {categoryId
         }
 
         if(!params.categoryId) {
-            return new NextResponse("Billboard ID is required", { status: 400 });
+            return new NextResponse("Category ID is required", { status: 400 });
         }
 
 
