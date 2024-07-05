@@ -6,6 +6,7 @@ import "./globals.css";
 
 import { ModalProvider } from "@/providers/ModalProvider";
 import { ToastProvider } from "@/providers/ToastProvider";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +20,17 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
     <ClerkProvider>
     <html lang='en'>
       <body>
-        <ToastProvider/>
-        <ModalProvider/>
-        {children}
+        <ThemeProvider 
+        attribute="class" 
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange>
+
+          <ToastProvider/>
+          <ModalProvider/>
+          {children}
+
+        </ThemeProvider>
       </body>
     </html>
   </ClerkProvider>
